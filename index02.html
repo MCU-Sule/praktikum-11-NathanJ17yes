@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name ="author" content="NathanJoshua 2172026">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #d3d3d3;
+        overflow: hidden;
+    }
+    .isi {
+        background-color: rgb(230, 230, 230);
+        border: 1px solid rgb(109, 107, 107);
+        color: black;
+        width: 120px;
+        height: 35px;
+        display: inline-block;
+        transform: translateX(500px) translateY(270px);
+        text-align: center;
+        padding-top: 20px;
+        z-index: -1;
+    }
+    .awalan {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+       line-height: 600px;
+        font-size: 2em;
+        background-color: #d3d3d3;
+        z-index: 2;
+    }
+    .awalan.hilang {
+        display: none;
+    }
+
+
+</style>
+<body>
+    <div class = "awalan">Press Any key to show the key code</div>
+    <div class = "isi" id = "key"></div>
+    <div class = "isi" id = "keycode"></div>
+    <div class = "isi" id = "eventcode"></div>  
+<script>
+    let awalan = document.querySelector(".awalan");
+    let isi1 = document.getElementById("key");
+    let isi2 = document.getElementById("keycode");
+    let isi3 = document.getElementById("eventcode");
+    document.addEventListener('keydown', (e)=>{
+        awalan.classList.add('hilang');
+        isi1.innerHTML = e.key;
+        isi2.innerHTML = e.keyCode;
+        isi3.innerHTML = e.code;
+    })
+</script>
+</body>
+</html>

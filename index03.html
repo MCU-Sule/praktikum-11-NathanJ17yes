@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin-left: 41%;
+        padding : 0;
+    }
+    td {
+        border: 1px solid rgb(3, 203, 248);
+        width: 100px;
+        height: 100px;
+        background-color:rgba(28, 189, 225, 0.07);
+        padding-bottom: 0;
+    }
+    img {
+        height: 100px;
+        width: 100px;
+        display: inline-flex;
+    }
+    #container {
+        width: 500px;
+        height: 100px;
+        margin-left: 33%;
+        margin-top: 10px;
+    }
+
+</style>
+<body>
+    <table cellspacing = "0" cellpading = "0">
+        <tr>
+            <td cellpading = "0" id = "k1" ondrop="drop(event); check()" ondragover="allowDrop(event)"></td>
+            <td cellpading = "0" id = "k2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+        </tr>
+        <tr>
+            <td cellpading = "0" id = "k3" ondrop="drop(event); check()" ondragover="allowDrop(event)"></td>
+            <td cellpading = "0" id = "k4" ondrop="drop(event); check()" ondragover="allowDrop(event)"></td>
+        </tr>
+    </table>
+    <div id = "container">
+    <img src="assets/1.jpg" id = "g1" draggable="true" ondragstart="drag(event)">
+    <img src="assets/2.jpg" id = "g2" draggable="true" ondragstart="drag(event)">
+    <img src="assets/3.jpg" id = "g3" draggable="true" ondragstart="drag(event)">
+    <img src="assets/4.jpg" id = "g4" draggable="true" ondragstart="drag(event)">
+</div>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+function check (){
+    let k1 = document.querySelector("#k1")
+    let k2 = document.querySelector("#k2")
+    let k3 = document.querySelector("#k3")
+    let k4 = document.querySelector("#k4")
+    let g1 = document.querySelector("#g1")
+    let g2 = document.querySelector("#g2")
+    let g3 = document.querySelector("#g3")
+    let g4 = document.querySelector("#g4")
+    if (k1 == g1){
+        alert ("wrong block")
+    }
+    else {
+        alert("right block")
+    }
+    if (k2.value != g2){
+        alert ("wrong block")
+    }
+    else {
+        alert("right block")
+    }
+    if (k3.value != g3){
+        alert ("wrong block")
+    }
+    else {
+        alert("right block")
+    }
+    if (k4.value != g4){
+        alert ("wrong block")
+    }
+    else {
+        alert("right block")
+    }
+}
+
+
+
+
+</script>
+</body>
+    
+    
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(240, 165, 156);
+    }
+    #isi {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        margin-top: 280px;
+        margin-left: 37%;
+        font-size: 2em;
+    }
+    .container {
+        width: 100px;
+        height: 25px;
+        padding-left: 15px;
+        padding-top: 5px;
+        background-color: salmon;
+        transform: translateX(630px) translateY(250px);
+    }
+    #speed{
+        width: 30px;
+        height: 10px;
+        display: inline-block;
+    }
+</style>
+<body>
+    <div id="isi">We Love Programming!</div>
+    <div class="container">
+    Speed : <input type="number" id="speed" min="1" max="10" onchange="animasi(); reset()">
+    </div>
+    <script>
+        let value = document.getElementById("speed").value
+        let isi = document.getElementById("isi").innerText
+        let lastvalue = value
+        
+        function animasi(){
+            let value = document.getElementById("speed").value
+            let waktu = 0
+            let level2 = value*100
+            let level = 1200 - level2
+            setTimeout(function kata(){
+                let isian = isi.slice(0,1); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,2); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,4); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,5); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,6); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,7); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,9); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,10); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,11); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,12); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,14); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,15); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,16); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,17); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,18); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,19); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+            waktu += level
+            setTimeout(function kata(){
+                let isian = isi.slice(0,20); 
+                document.getElementById("isi").innerText = isian;
+            }, waktu)
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name ="author" content="NathanJoshua 2172026">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin-left: 25%;
+    }
+    td {
+        border: 2px solid black;
+        height: 50px;
+        width: 50px;
+    }
+    #progress {
+        margin-left: 25%;
+        width: 570px;
+        height: 100px;
+    }
+    #container {
+        width: 250px;
+        height: 65px;
+        margin-left: 40%;
+    }
+   input{
+       width: 50px;
+       height: 50px;
+       padding: 0;
+       margin-left: 10px;
+   }
+</style>
+<body>
+    <table>
+        <tr>
+            <td id = "s1"></td>
+            <td id = "s2"></td>
+            <td id = "s3"></td>
+            <td id = "s4"></td>
+            <td id = "s5"></td>
+            <td id = "s6"></td>
+            <td id = "s7"></td>
+            <td id = "s8"></td>
+            <td id = "s9"></td>
+            <td id = "s10"></td>
+        </tr>
+        <tr>
+            <td id = "c1"></td>
+            <td id = "c2"></td>
+            <td id = "c3"></td>
+            <td id = "c4"></td>
+            <td id = "c5"></td>
+            <td id = "c6"></td>
+            <td id = "c7"></td>
+            <td id = "c8"></td>
+            <td id = "c9"></td>
+            <td id = "c10"></td>
+        </tr>
+    </table>
+    <textarea id = "progress"></textarea> <br>
+    <div id = "container">
+        <input type="button" id= "batu" value="Batu" onclick="Batu()">
+        <input type="button" id= "gunting" value="Gunting" onclick="Gunting()">
+        <input type="button" id= "kertas"value="kertas" onclick="Kertas()">
+    </div>
+    <script>
+        let i;
+        let player = "P"
+        let comp = "E"
+        let moveP = document.querySelector("#s"+ i)
+        let moveE = document.querySelector("#c"+ i)
+        let batu = document.querySelector("#batu").value 
+        let gunting = document.querySelector("#gunting").value
+        let kertas = document.querySelector("#kertas").value
+        let random = Math.round(Math.random()*3)
+        let hasil = document.querySelector("#progress")
+        //batu = 0, gunting = 1, kertas = 2
+        function Batu (){
+            i = 1
+            a = 1
+            let moveP = document.getElementById("s"+i)
+            let moveE = document.querySelector("#c"+a)
+            let random = Math.round(Math.random()*3)
+            if (random == 0){
+                let moveP = document.getElementById("s"+i)
+                let moveE = document.querySelector("#c"+a)
+                hasil.innerHTML = "Batu(user) ketemu Batu(comp), Draw"
+                moveE.innerHTML = "E"
+                moveP.innerHTML = "P"
+            }
+            else if (random == 1){
+                i = i + 1
+                let moveP = document.getElementById("s"+i)
+                let moveE = document.querySelector("#c"+a)
+                hasil.innerHTML = "Batu(user) ketemu gunting(comp), User maju"
+                moveP.innerHTML = "P"
+                
+            }
+            else {
+                a = a + 1
+                let moveP = document.getElementById("s"+i)
+                let moveE = document.querySelector("#c"+a)
+                hasil.innerHTML = "Batu(user) ketemu Kertas(comp), Comp maju"
+                moveE.innerHTML = "E"
+                
+            }
+            console.log(moveE)
+        }
+        function Gunting(){
+            let moveP = document.getElementById("s"+i)
+            let moveE = document.querySelector("#c"+i)
+            i = 0
+            let random = Math.round(Math.random()*3)
+            if (random == 1){
+                hasil.innerHTML = "Gunting(user) ketemu Gunting(comp), Draw"
+            }
+            else if(random == 0){
+                a = a + 1
+                hasil.innerHTML = "Gunting(user) ketemu Batu(Comp), Comp maju"
+            }
+            else{
+                i = i + 1
+                hasil.innerHTML = "Gunting(user) ketemu Kertas(Comp), User maju"
+            }
+        }
+        function Kertas(){
+            let moveP = document.querySelector("#s"+ i)
+            let moveE = document.querySelector("#c"+ i)
+            i = 0
+            a = 0
+            let random = Math.round(Math.random()*3)
+            if (random == 2){
+                hasil.innerHTML = "Kertas(user) ketemu Kertas(comp), Draw"
+            }
+            else if (random == 1){
+                hasil.innerHTML = "Kertas(user) ketemu Gunting(comp), Comp maju"
+                a = a + 1
+            }
+            else {
+                hasil.innerHTML = "Kertas(user) ketemu Batu(Comp), user maju"
+                i = i + 1
+            }
+        }
+
+    </script>
+</body>
+</html>
